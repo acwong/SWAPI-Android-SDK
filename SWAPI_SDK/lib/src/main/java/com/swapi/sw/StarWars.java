@@ -23,6 +23,11 @@ public interface StarWars {
     public void getPeople(@Path("id") int peopleId,
                           Callback<People> callback);
 
+    @GET("/people/")
+    public void searchPeople(@Query("search") String query,
+                             @Query("page") int page,
+                             Callback<SWModelList<People>> callback);
+
     @GET("/films/")
     public void getAllFilms(@Query("page") int page,
                             Callback<SWModelList<Film>> callback);
@@ -30,6 +35,11 @@ public interface StarWars {
     @GET("/films/{id}/")
     public void getFilm(@Path("id") int filmId,
                         Callback<Film> callback);
+
+    @GET("/films/")
+    public void searchFilms(@Query("search") String query,
+                            @Query("page") int page,
+                            Callback<SWModelList<Film>> callback);
 
     @GET("/starships")
     public void getAllStarships(@Query("page") int page,
@@ -39,6 +49,11 @@ public interface StarWars {
     public void getStarship(@Path("id") int starshipId,
                             Callback<Starship> callback);
 
+    @GET("/starships/")
+    public void searchStarships(@Query("search") String query,
+                                @Query("page") int page,
+                                Callback<SWModelList<Starship>> callback);
+
     @GET("/vehicles/")
     public void getAllVehicles(@Query("page") int page,
                                Callback<SWModelList<Vehicle>> callback);
@@ -46,6 +61,11 @@ public interface StarWars {
     @GET("/vehicles/{id}/")
     public void getVehicle(@Path("id") int vehicleId,
                            Callback<Vehicle> callback);
+
+    @GET("/vehicles/")
+    public void searchVehicles(@Query("search") String query,
+                               @Query("page") int page,
+                               Callback<SWModelList<Vehicle>> callback);
 
     @GET("/species/")
     public void getAllSpecies(@Query("page") int page,
@@ -55,6 +75,11 @@ public interface StarWars {
     public void getSpecies(@Path("id") int speciesId,
                            Callback<Species> callback);
 
+    @GET("/species/")
+    public void searchSpecies(@Query("search") String query,
+                              @Query("page") int page,
+                              Callback<SWModelList<Species>> callback);
+
     @GET("/planets/")
     public void getAllPlanets(@Query("page") int page,
                               Callback<SWModelList<Planet>> callback);
@@ -63,4 +88,8 @@ public interface StarWars {
     public void getPlanet(@Path("id") int planetId,
                           Callback<Planet> callback);
 
+    @GET("/planets/")
+    public void searchPlanets(@Query("search") String query,
+                              @Query("page") int page,
+                              Callback<SWModelList<Planet>> callback);
 }
